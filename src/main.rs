@@ -29,10 +29,12 @@ fn userhandle() {
 
 
         if userchoice == 1 {
-            convertftoc();
+            let mut user_valuef = convertftoc(40.0);
+            println!("The value is: {user_valuef}");
             break;
         } else if userchoice == 2 {
-            convertctof();
+            let mut user_valuec = convertctof(32.0);
+            println!("The value is: {user_valuec}");
             break;
         } else if userchoice == 3 {
             println!("Bye!");
@@ -46,12 +48,20 @@ fn userhandle() {
     }
 }
 
-fn convertftoc() {
+fn convertftoc(f: f64) -> f64 {
 println!("Convert from fahrenheit to celsius.");
+
+let cvalue = f - 32.0 / 1.8000;
+
+cvalue
 
 }
 
-fn convertctof() {
+fn convertctof(c: f64) -> f64 {
 println!("Convert from celsius to fahrenheit.");
+
+let fvalue = c * 1.8000 + 32.00;
+
+fvalue
 
 }
