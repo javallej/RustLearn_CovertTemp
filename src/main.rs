@@ -32,8 +32,7 @@ fn userhandle() {
             userchoice_handle1();
             break;
         } else if userchoice == 2 {
-            let mut user_valuec = convertctof(32.0);
-            println!("The value is: {user_valuec}");
+            userchoice_handle2();
             break;
         } else if userchoice == 3 {
             println!("Bye!");
@@ -79,6 +78,30 @@ fn userchoice_handle1() {
 }
 
 fn userchoice_handle2() {
+
+    let mut userchoice_convertftoc = String::new();
+    let mut user_pass:f64 = 0.0;
+
+    println!("Please enter a value to convert from fahrenheit to celsius.");
+
+
+    io::stdin()
+    .read_line(&mut userchoice_convertftoc)
+    .expect("Failed to read line");
+
+
+    let userchoice_convertftoc: f64 = match userchoice_convertftoc.trim().parse() {
+            Ok(num) => {
+            let rvalue: f64 = convertctof(num);
+            rvalue
+        }
+        Err(_) => 0.0
+    };
+
+
+    let userchoice_convertftoc_string  = userchoice_convertftoc.to_string();
+
+    println!("The result is: {userchoice_convertftoc_string}");
 
 }
 
